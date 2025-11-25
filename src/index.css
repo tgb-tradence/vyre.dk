@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* VYRE Brand Palette - DTC Optimized */
+  --color-bg: #111317;
+  /* Dark Background */
+  --color-surface: #4E5256;
+  /* Gunmetal */
+  --color-accent: #AB6E53;
+  /* Copper */
+  --color-highlight: #8A9BA8;
+  /* Steel Blue */
+  --color-light: #F5F5F5;
+  /* Light Text/Bg */
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  /* Brand style */
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-text-primary);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-heading);
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  /* Copper */
+  color: #FFFFFF;
+  padding: 1.2rem 3rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: #c48b72;
+  /* Lighter Copper */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(171, 110, 83, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: 1.2rem 3rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism Utilities - Architectural/Clean */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Advanced Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--color-accent-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 15px var(--color-accent-glow);
+  }
+
+  /* Subtler glow */
+  100% {
+    box-shadow: 0 0 5px var(--color-accent-glow);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s infinite;
+}
+
+/* Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
